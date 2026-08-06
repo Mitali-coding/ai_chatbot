@@ -1,0 +1,1 @@
+export const recentChats = Array.from({ length: 6 });
