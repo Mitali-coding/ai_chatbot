@@ -10,6 +10,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("AI Chatbot Backend is running successfully 🚀");
+});
+
 app.post("/api/chat", async (req, res) => {
   try {
     const { message } = req.body;
