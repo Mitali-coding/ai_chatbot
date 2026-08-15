@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react"
 import logo from "../assets/logo.png";
 // import { recentChats } from "./utils";
 
@@ -9,6 +9,8 @@ function Sidebar({
   setCurrentChatId,
   darkMode,
   setDarkMode,
+  isOpen,
+  setIsOpen,
 }) {
   const createNewChat = () => {
     const newChat = {
@@ -34,7 +36,7 @@ function Sidebar({
       }
     }
   };
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>

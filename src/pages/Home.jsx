@@ -16,24 +16,33 @@ function Home() {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
-  
+
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-  // Save chats
   useEffect(() => {
     localStorage.setItem("chats", JSON.stringify(chats));
   }, [chats]);
 
-  // Save current chat id
   useEffect(() => {
     localStorage.setItem("currentChatId", currentChatId);
   }, [currentChatId]);
 
   return (
     <div className={`app-shell ${darkMode ? "dark" : ""}`}>
+      
+      {/* Mobile Menu Button */}
+      <button
+        className="mobile-menu-btn"
+        onClick={() => setSidebarOpen(true)}
+        aria-label="Open sidebar"
+      >
+        ☰
+      </button>
+
       <Sidebar
         chats={chats}
         setChats={setChats}
@@ -41,6 +50,8 @@ function Home() {
         setCurrentChatId={setCurrentChatId}
         darkMode={darkMode}
         setDarkMode={setDarkMode}
+        isOpen={sidebarOpen}
+        setIsOpen={setSidebarOpen}
       />
 
       <Navbar
