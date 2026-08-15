@@ -15,7 +15,11 @@ app.use(
   })
 );
 
-app.options(/.*/, cors());
+app.use(cors());
+
+app.options("/api/chat", (req, res) => {
+  res.sendStatus(204);
+});
 
 app.use(express.json());
 
