@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://aichatbot-production-3d6a.up.railway.app/api",
 });
 
 export const sendChatMessage = (message) => {
