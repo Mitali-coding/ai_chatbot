@@ -33,15 +33,14 @@ function Home() {
 
   return (
     <div className={`app-shell ${darkMode ? "dark" : ""}`}>
-      
       {/* Mobile Menu Button */}
-      <button
+      {/* <button
         className="mobile-menu-btn"
         onClick={() => setSidebarOpen(true)}
         aria-label="Open sidebar"
       >
         ☰
-      </button>
+      </button> */}
 
       <Sidebar
         chats={chats}
@@ -59,6 +58,7 @@ function Home() {
         setChats={setChats}
         currentChatId={currentChatId}
         setCurrentChatId={setCurrentChatId}
+        setSidebarOpen={setSidebarOpen}
       />
     </div>
   );

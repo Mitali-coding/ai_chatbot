@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import logo from "../assets/logo.png";
 // import { recentChats } from "./utils";
 
@@ -51,8 +51,8 @@ function Sidebar({
             <span className="brand-name">AI Chatbot</span> */}
           </div>
 
-          <button className="icon-btn" onClick={() => setIsOpen(!isOpen)}>
-            ↗
+          <button className="icon-btn" onClick={() => setIsOpen(false)}>
+            ←
           </button>
         </div>
 

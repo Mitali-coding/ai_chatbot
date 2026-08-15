@@ -4,7 +4,13 @@ import InputBox from "./InputBox";
 import headerlogo from "../assets/headerlogo.png";
 import { sendChatMessage } from "../services/api";
 
-function Navbar({ chats, setChats, currentChatId, setCurrentChatId }) {
+function Navbar({
+  chats,
+  setChats,
+  currentChatId,
+  setCurrentChatId,
+  setSidebarOpen,
+}) {
   const [loading, setLoading] = useState(false);
 
   // Current chat nikal lo
@@ -91,6 +97,14 @@ function Navbar({ chats, setChats, currentChatId, setCurrentChatId }) {
   return (
     <main className="chat-main">
       <div className="chat-topbar">
+        <button
+          className="sidebar-toggle"
+          onClick={() => setSidebarOpen(true)}
+          aria-label="Open sidebar"
+        >
+          ☰
+        </button>
+
         <img src={headerlogo} alt="" style={{ height: "40px" }} />
       </div>
 
