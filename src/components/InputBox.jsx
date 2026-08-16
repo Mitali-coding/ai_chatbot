@@ -41,9 +41,7 @@ function InputBox({ onSend, loading }) {
         </button>
       </div>
 
-      <div className="input-hint">
-        AI can make mistakes. Check important information.
-      </div>
+    
     </div>
   );
 }
