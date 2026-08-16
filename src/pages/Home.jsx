@@ -59,6 +59,7 @@ function Home() {
         currentChatId={currentChatId}
         setCurrentChatId={setCurrentChatId}
         setSidebarOpen={setSidebarOpen}
+        darkMode={darkMode}
       />
     </div>
   );

@@ -14,7 +14,47 @@ function ChatWindow({ messages }) {
     <div className="chat-body">
       {messages.length === 0 ? (
         <div className="empty-state">
-          Start a conversation by typing a message below.
+          <div className="empty-icon">✦</div>
+
+          <h1>How can I help you?</h1>
+
+          <p>
+            Ask anything, explore ideas, or get help with your next project.
+          </p>
+
+          <div className="suggestion-grid">
+            <div className="suggestion-card">
+              <span>💡</span>
+              <div>
+                <strong>Explain something</strong>
+                <small>Make complex topics simple</small>
+              </div>
+            </div>
+
+            <div className="suggestion-card">
+              <span>💻</span>
+              <div>
+                <strong>Write code</strong>
+                <small>Build and debug your project</small>
+              </div>
+            </div>
+
+            <div className="suggestion-card">
+              <span>✨</span>
+              <div>
+                <strong>Generate ideas</strong>
+                <small>Brainstorm something creative</small>
+              </div>
+            </div>
+
+            <div className="suggestion-card">
+              <span>📚</span>
+              <div>
+                <strong>Learn something</strong>
+                <small>Get clear explanations</small>
+              </div>
+            </div>
+          </div>
         </div>
       ) : (
         messages.map((msg, index) => (

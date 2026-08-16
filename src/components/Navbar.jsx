@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ChatWindow from "./ChatWindow";
 import InputBox from "./InputBox";
 import headerlogo from "../assets/headerlogo.png";
+import headerlogoDark from "../assets/headerlogo-dark.png";
 import { sendChatMessage } from "../services/api";
 
 function Navbar({
@@ -10,6 +11,7 @@ function Navbar({
   currentChatId,
   setCurrentChatId,
   setSidebarOpen,
+  darkMode,
 }) {
   const [loading, setLoading] = useState(false);
 
@@ -96,17 +98,23 @@ function Navbar({
 
   return (
     <main className="chat-main">
-      <div className="chat-topbar">
-        <button
-          className="sidebar-toggle"
-          onClick={() => setSidebarOpen(true)}
-          aria-label="Open sidebar"
-        >
-          ☰
-        </button>
+     <div className="chat-topbar">
+  <div className="topbar-left">
+    <button
+      className="mobile-menu-btn"
+      onClick={() => setSidebarOpen(true)}
+      aria-label="Open sidebar"
+    >
+      ☰
+    </button>
 
-        <img src={headerlogo} alt="" style={{ height: "40px" }} />
-      </div>
+    <img
+      src={darkMode ? headerlogoDark : headerlogo}
+      alt="AI Chatbot"
+      className="header-logo"
+    />
+  </div>
+</div>
 
       <ChatWindow messages={messages} />
 

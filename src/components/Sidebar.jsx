@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.png";
+import logoDark from "../assets/logo-dark.png";
 // import { recentChats } from "./utils";
 
 function Sidebar({
@@ -43,7 +44,11 @@ function Sidebar({
       <aside className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="sidebar-header">
           <div className="brand">
-            <img src={logo} alt="" style={{ width: "160px" }} />
+            <img
+              src={darkMode ? logoDark : logo}
+              alt="AI Chatbot"
+              className="sidebar-logo"
+            />
             {/* <div className="brand-icon">
               🤖
             </div>
@@ -103,8 +108,12 @@ function Sidebar({
             <div className="skel-line short"></div>
           </div>
 
-          <button className="gear-btn" onClick={() => setDarkMode(!darkMode)}>
-            {darkMode ? "☀️" : "🌙"}
+          <button
+            className={`theme-toggle ${darkMode ? "active" : ""}`}
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle theme"
+          >
+            <span className="toggle-icon">{darkMode ? "☀" : "☾"}</span>
           </button>
         </div>
       </aside>
